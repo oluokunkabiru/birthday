@@ -57,6 +57,31 @@
           Your browser does not support the audio element.
           </audio>
           <!-- <button onclick=" " id="b">ok</button> -->
+          <a href="#birth" id="mo" data-toggle="modal"> </a>
+          <div class="modal" id="birth">
+            <div class="modal-dialog">
+                <div class="modal-content">
+            
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Congratulation</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+            
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <h5>Its Your Birthday</h5>
+                    <h2 class="font-weight-bold">Engineer Omolewu Opeyemi Sunday</h2>
+                  </div>
+            
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  </div>
+            
+                </div>
+              </div>
+          </div>
           <section>
             <div class="container-fluid" style="background-color:#000000">
               <footer class="p-5" id="contact">
@@ -167,6 +192,7 @@
 
 
            $(document).ready(function(){
+            $('#mo').click();   
             $('#b').click();   
            });
 
