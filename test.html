@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIADI KAFAYAT OLABISI BIRTHDAY</title>
+    <link rel="stylesheet" href="bootsrap/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
+    <!--Style-CSS -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<!--Font-awesome-icons -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+    
+</head>
+
+<body id="b" onclick="playme()">
+   
+
+    <!-- <embed src="images/HBD.mp3" loop="true" autostart="true" width="100" height="100"> -->
+    <audio controls loop id="hbd" hidden>
+            <source src="music/HBD.mp3" type="audio/mpeg">
+
+          Your browser does not support the audio element.
+          </audio>
+
+
+    <audio controls loop id="birthdaydate" hidden>
+            <source src="music/04 HAPPY BIRTHDAY.mp3" type="audio/mpeg">
+                
+          Your browser does not support the audio element.
+     </audio>
+
+<!-- modal starts here  -->
+     <a href="#birth" id="mo" data-toggle="modal"> </a>
+    <div class="modal" id="birth">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <section class="w3l-coming-soon-page">
+                        <div class="coming-page-infohny">
+                            <div class="wrapper">
+                                <div class="header">
+                                    <div class="logo">
+                                        <a class="brand-logo" href="index.html" id="hurray">Alhamdulilah you're Alive.</a>
+                                    </div>
+                                    
+                                </div>
+                                <div class="coming-block">
+                                    <h1 id="comingsoon">Coming Soon</h1>
+                                    <h2 class="parahny">Your birthday is coming soon on the <span class="mybirthdate"></span></h2>
+                
+                                </div>
+                                <div class="alive-bottom">
+
+                                
+                                    <div class="countdown mygreet">
+                                        <h6>Countdown to your Birthday</h6>
+                                        <div class="countdown__days">
+                                            <div class="number"></div>
+                                            <span class>Days</span>
+                                        </div>
+                
+                                        <div class="countdown__hours">
+                                            <div class="number"></div>
+                                            <span class>Hours</span>
+                                        </div>
+                
+                                        <div class="countdown__minutes">
+                                            <div class="number"></div>
+                                            <span class>Minutes</span>
+                                        </div>
+                
+                                        <div class="countdown__seconds">
+                                            <div class="number"></div>
+                                            <span class>Seconds</span>
+                                        </div>
+                                    </div>
+                                    <div class="copyright-footer ">
+                                        
+                                        <div class="w3lhny-socialicons">
+                                            <ul class="social">
+                                                <li><h6>To get something like this for your loved ones, follow us on :</h6></li>
+                                                <li><a href="facebook.com/mhizta mystique"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                                                <li><a href="linkedin/gmctech"><span class="fa fa-linkedin" aria-hidden="true"></span></a></li>
+                                                <li><a href="twitter/d_mystique_one"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
+                                                <li>
+                                                    <a href="#instagram" class="linkedin"><span class="fa fa-instagram"></span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                        <p>© 2021 Happy Birthday in Advance.  | Designed by <a
+                                                href="https://gmctech.com" target="_blank">GMC Technologies</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                           
+                         
+                
+                    </section>
+               
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
+<script src="bootsrap/jquery.js"></script>
+<script src="bootsrap/popper.js"></script>
+<script src="bootsrap/bootstrap.min.js"></script>
+<script src="jquery.countdown/jquery.countdown.min.js"></script>
+<!-- <script src="bootsrap/jquery.countdown.min.js"></script> -->
+
+
+<script>
+      const deadlineDate = new Date('February 28, 2021 11:59:59').getTime();
+                
+                // Cache all countdown boxes into consts
+                const countdownDays = document.querySelector('.countdown__days .number');
+                const countdownHours = document.querySelector('.countdown__hours .number');
+                const countdownMinutes = document.querySelector('.countdown__minutes .number');
+                const countdownSeconds = document.querySelector('.countdown__seconds .number');
+                
+                // Get current date and time
+                // Update the count down every 1 second (1000 milliseconds)
+              
+              var mytiming =  setInterval(() => {
+                 const currentDate = new Date().getTime();
+
+                    
+
+                    // Calculate the distance between current date and time and the deadline date and time
+                    const distance = deadlineDate - currentDate;
+
+                    // Calculations the data for remaining days, hours, minutes and seconds
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Insert the result data into individual countdown boxes
+                    countdownDays.innerHTML = days;
+                    countdownHours.innerHTML = hours;
+                    countdownMinutes.innerHTML = minutes;
+                    countdownSeconds.innerHTML = seconds;
+                    $('.mybirthdate').html(new Date(deadlineDate).toString());
+                    var tobirthday = deadlineDate - currentDate;
+                                            if(tobirthday < 0){
+                                               clearInterval(mytiming);
+                                              $('.countdown').hide();
+                                              $('#hurray').html('Hurray !!!!');
+                                              $('#comingsoon').html('Happy Birthday');
+                                              $('.parahny').html('It \'s your birthday');
+
+                                            }
+
+                }, 1000);
+       
+
+           
+    function beforeDOB() {
+        var x = document.getElementById("hbd");
+        // x.autoplay = true;
+        x.play();
+
+    }
+
+    function DOB() {
+        var x = document.getElementById("birthdaydate");
+        // x.autoplay = true;
+        x.play();
+
+    }
+//   var dob = new Date(deadlineDate);
+        var today = new Date().getTime();
+    function playme() {
+        if (today < deadlineDate) {
+           beforeDOB(); 
+        } else {
+            DOB();
+        }
+    }
+
+
+    $("#example").countdown(deadlineDate).on('update.countdown', function(event) {
+        // const countdownDays = document.querySelector('.countdown__days .number');
+        // const countdownHours = document.querySelector('.countdown__hours .number');
+        // const countdownMinutes = document.querySelector('.countdown__minutes .number');
+        // const countdownSeconds = document.querySelector('.countdown__seconds .number');
+        var $this = $(this).html(event.strftime('' +
+                '<li><span >%-w</span><p>Week%!w:s;</p></li>' +
+                '<li class="seperator">:</li>' +
+                '<li><span >%-d</span><p >Day%!d:s;</p></li>' +
+                '<li class="seperator">:</li>' +
+                '<li><span>%-H</span><p >Hour%!H:s;</p></li>' +
+                '<li class="seperator">:</li>' +
+                '<li><span>%-M</span><p>Minute%!M:s;</p></li>' +
+                '<li class="seperator">:</li>' +
+                '<li><span>%-S</span><p>Second%!S:s;</p></li>'
+            )
+
+        )
+        $('.adv').html("in advance");
+    }).on('finish.countdown', function(event) {
+
+        var $this = $(this).html(event.strftime('' +
+            '<li><span class="hap">Congratulation</span></li>'
+        ))
+    });
+
+
+    $(document).ready(function() {
+        $('#mo').click();
+
+        $('#b').click();
+    });
+
+    $(document).ready(setInterval(slider, 2000));
+
+    function slider() {
+        var imag = ['images/lk.jpg', 'images/lk1.jpg', 'images/lk2.jpg', 'images/lk3.jpg', 'images/lk4.jpg', 'images/lk5.jpg',
+            'images/lk6.jpg', 'images/lk7.jpg', 'images/lk8.jpg', 'images/lk9.jpg', 'images/lk10.jpg', 'images/lk11.jpg', 'images/lk12.jpg', 'images/lk13.jpg'
+        ];
+        // , 'images/IMG_0328.jpeg', 'images/IMG_0329.jpeg'
+        var ok = document.getElementById('slides');
+        var image = imag.sort(function(a, b) {
+            return 0.5 - Math.random()
+        });
+        ok.style.backgroundImage = "url('" + image[0] + "')";
+        ok.style.backgroundSize = "100%";
+        ok.style.backgroundRepeat = "no-repeat";
+
+    }
+
+    function year() {
+        var y = document.getElementById('y');
+        var d = new Date();
+        y.innerHTML = d.getFullYear();
+    }
+    $(document).ready(year);
+
+
+    (function($) {
+
+
+        "use strict";
+
+
+
+
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+                this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+                this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) {
+                delta /= 2;
+            }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+                delta = this.period;
+                this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+                this.isDeleting = false;
+                this.loopNum++;
+                delta = 500;
+            }
+
+            setTimeout(function() {
+                that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+    })(jQuery);
+</script>
