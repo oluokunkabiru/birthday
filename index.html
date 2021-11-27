@@ -148,17 +148,17 @@ ul#example li p {
 
     <!-- <embed src="images/HBD.mp3" loop="true" autostart="true" width="100" height="100"> -->
     <audio controls loop id="before" hidden>
-            <source src="images/HBD.mp3" type="audio/mpeg">
+            <source src="" type="audio/mpeg">
           Your browser does not support the audio element.
     </audio>
 
     <audio controls loop id="on" hidden>
-        <source src="images/HBD.mp3" type="audio/mpeg">
+        <source src="" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <audio controls loop id="after" hidden>
-        <source src="images/HBD.mp3" type="audio/mpeg">
+        <source src="" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -320,50 +320,58 @@ ul#example li p {
     var d2 = new Date(date);
     var birthday = d2.setFullYear(d2.getFullYear(), d2.getMonth(), d2.getDate());
     var today = d2.setFullYear(d1.getFullYear(), d1.getMonth(), d1.getDate());
-    var folder = "";
+    var folder = "images/";
     var msg = "";
+    var img = [];
+    var music ="";
     if(today < birthday){
         id = "before";
-        folder = id;
+        folder += id;
+        for(var i=0; i<10; i++){
+            img.push(folder+"/"+i+".jpg");
+        }
+        music = folder+"/hbd.mp3";
+        
 
     }else if(today == birthday){
         id = "on";
-        folder = id;
+        folder += id;
         msg = '<li><span class="hap">Congratulation dear ABIOLA ABIODUN. R (ATP)</span></li>';
 
     }else{
         id = "after";
-        folder = id;
+        folder += id;
         msg = '<li><span class="haps">ATP say Party after party <i>Thanks All</i> </span></li>';
 
     }
+    // alert(folder)
     // var birt = 
     // console.log(birthday +"  "+ today);
-    var music = [];
-    var dir = "images/"+folder+"/";
-    var img = [];
-        $.ajax({
-            url: dir,
-            success: function (data) {
-                // console.log(data)
-                $(data).find("a").attr("href", function (i, val) {
-                    if (val.match(/\.(jpe?g|png)$/)) {
-                        img.push(dir+val)
-                    }
-                    if (val.match(/\.(mp3)$/)) {
-                        music.push(dir+val)
-                        
+    // var music = [];
+    // var dir =  "images/"+folder+"/";
+    // var img = [];
+    //     $.ajax({
+    //         url: dir,
+    //         success: function (data) {
+    //             // console.log(data)
+    //             $(data).find("a").attr("href", function (i, val) {
+    //                 if (val.match(/\.(jpe?g|png)$/)) {
+    //                     img.push(dir+val)
+    //                 }
+    //                 if (val.match(/\.(mp3)$/)) {
+    //                     music.push(dir+val)
+    //                 }
+    //              });
 
-                    }
-                 });
-
-            }
-        });
+    //         }
+    //     });
 
    
-    // console.log(img);
-    $("#"+id).find('source').attr("src", music[0]);
-    console.log($("#"+id).find('source').attr("src"));
+    // console.log(music[0]);
+
+    // alert(music)
+    $("#"+id).find('source').attr("src", music);
+    // console.log($("#"+id).find('source').attr("src"));
     function enableAutoplay() {
         var x = document.getElementById(id);
         // x.autoplay = true;
