@@ -327,7 +327,7 @@ ul#example li p {
     if(today < birthday){
         id = "before";
         folder += id;
-        for(var i=0; i<8; i++){
+        for(var i=1; i<8; i++){
             img.push(folder+"/"+i+".jpg");
         }
         music = folder+"/hbd.mp3";
@@ -407,7 +407,7 @@ ul#example li p {
         $('#b').click();
     });
 
-    $(document).ready(setInterval(slider, 2000));
+    $(document).ready(setInterval(slider, 3000));
 
     function slider() {
         var imag = img;
